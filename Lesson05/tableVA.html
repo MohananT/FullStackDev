@@ -1,0 +1,106 @@
+<!-- 
+==========================================================
+HTML TABLES + MEDIA TAGS (VIDEO & AUDIO) - DEMO DOCUMENT
+==========================================================
+
+This document demonstrates the use of:
+
+1) HTML TABLE TAGS
+   - <table> : Creates the table
+   - <tr>    : Defines a table row
+   - <th>    : Defines a table header cell
+   - <td>    : Defines a table data cell
+   - colspan : Merges multiple columns into one cell
+   - rowspan : Merges multiple rows into one cell
+
+2) HTML VIDEO TAG
+   - <video> : Embeds a video into the webpage
+   - controls attribute: Adds Play, Pause, Volume, and Timeline controls
+   - <source> : Specifies the media file and its type
+
+3) HTML AUDIO TAG
+   - <audio> : Embeds audio into the webpage
+   - controls attribute: Adds built-in audio controls
+   - <source> : Specifies the audio file source
+
+This file is useful for beginners to learn how tables and media work.
+==========================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Tables and Media Demo</title>
+</head>
+
+<body>
+
+    <h1>HTML Tables Example</h1>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Marks</th>
+        </tr>
+
+        <tr>
+            <td>Alice</td>
+            <td>HTML</td>
+            <td>90</td>
+        </tr>
+
+        <tr>
+            <td>Bob</td>
+            <td>CSS</td>
+            <td>85</td>
+        </tr>
+
+        <tr>
+            <td>Charlie</td>
+            <td>JavaScript</td>
+            <td>88</td>
+        </tr>
+
+        <!-- Example of colspan -->
+        <tr>
+            <th colspan="2">Average Marks</th>
+            <td>87</td>
+        </tr>
+
+        <!-- Example of rowspan -->
+        <tr>
+            <th rowspan="2">Topper</th>
+            <td>David</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>Eva</td>
+            <td>93</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h1>HTML Video Example</h1>
+
+    <video width="500" controls>
+        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <hr>
+
+    <h1>HTML Audio Example</h1>
+
+    <audio controls>
+        <source src="https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp4" type="audio/mp4">
+        Your browser does not support the audio element.
+    </audio>
+
+</body>
+
+</html>

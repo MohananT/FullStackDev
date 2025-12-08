@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Complete Form Example</title>
+</head>
+
+<body>
+
+    <!-- 
+    MAIN FORM
+    action="" → where the form data will be submitted (server URL)
+    method="POST" → data is sent securely and not visible in URL
+  -->
+    <form action="/submit" method="POST">
+
+        <!-- ===========================
+         1. Text Input + Label
+          cannot be empty
+          must be at least 3 chars 
+          cannot exceed 50 chars
+         =========================== -->
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required minlength="3"
+            maxlength="10">
+        <br><br>
+
+        <!-- ===========================
+         2. Email Input
+         browser will validate email format
+         helps browser auto-fill
+         =========================== -->
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required autocomplete="email">
+        <br><br>
+
+        <!-- ===========================
+         3. Password Input
+         =========================== -->
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" minlength="8" placeholder="Minimum 8 characters" required
+            autocomplete="new-password">
+        <br><br>
+
+        <!-- ===========================
+         4. Phone Number (using pattern)
+          regex: only 10-digit number
+         =========================== -->
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="10-digit number" pattern="[0-9]{10}" required>
+        <br><br>
+
+        <!-- ===========================
+         5. Number Input (with min, max, step)
+         increments by 1
+         =========================== -->
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="1" max="120" step="10" required>
+        <br><br>
+
+        <!-- ===========================
+         6. Date Input
+         =========================== -->
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" min="1900-01-01" max="2025-12-31" required>
+        <br><br>
+
+        <!-- ===========================
+         7. Radio Buttons (select ONE)
+         IMPORTANT: All radios must have SAME name
+         =========================== -->
+        <label>Gender</label><br>
+
+        <label>
+            <input type="radio" name="gender" value="male" required>
+            Male
+        </label><br>
+
+        <label>
+            <input type="radio" name="gender" value="female">
+            Female
+        </label><br>
+
+        <label>
+            <input type="radio" name="gender" value="other">
+            Other
+        </label>
+        <br><br>
+
+        <!-- ===========================
+         8. Checkbox (select MULTIPLE)
+         =========================== -->
+        <label>Skills</label><br>
+
+        <label><input type="checkbox" name="skills" value="html"> HTML</label><br>
+        <label><input type="checkbox" name="skills" value="css"> CSS</label><br>
+        <label><input type="checkbox" name="skills" value="javascript"> JavaScript</label><br>
+
+        <br>
+
+        <!-- ===========================
+         9. Select Dropdown
+         =========================== -->
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+            <option value="" disabled>-- Select Country --</option>
+            <option value="india" selected>India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="australia">Australia</option>
+        </select>
+        <br><br>
+
+        <!-- ===========================
+         10. Textarea (multiline text)
+         =========================== -->
+        <label for="bio">Short Bio</label><br>
+        <textarea id="bio" name="bio" rows="5" cols="40" placeholder="Tell something about yourself..."
+            required></textarea>
+        <br><br>
+
+        <!-- ===========================
+         11. File Upload
+         =========================== -->
+        <label for="resume">Upload Resume</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+        <br><br>
+
+        <!-- ===========================
+         12. Readonly Input
+         =========================== -->
+        <label for="userid">User ID (readonly)</label>
+        <input type="text" id="userid" value="USER12345" readonly>
+        <br><br>
+
+        <!-- ===========================
+         13. Disabled Input
+         =========================== -->
+        <label for="status">Account Status</label>
+        <input type="text" id="status" value="Not Editable" disabled>
+        <br><br>
+
+        <!-- ===========================
+         14. Submit Button
+         =========================== -->
+        <button type="submit">Submit Form</button>
+
+        <!-- ===========================
+         15. Reset Button
+         =========================== -->
+        <button type="reset">Reset All Fields</button>
+
+    </form>
+
+</body>
+
+</html>
