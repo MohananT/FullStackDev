@@ -1,0 +1,112 @@
+<!-- ========== CSS BASICS SUMMARY ========== -->
+
+<!-- 1. Ways to use CSS -->
+
+<!-- Inline CSS:
+     Written directly inside HTML tags using style="" -->
+
+<!-- Internal CSS:
+     Written inside <style> tag in the <head> section -->
+
+<!-- External CSS:
+     Written in a separate .css file and linked using <link> -->
+
+
+<!-- 2. Colors in CSS -->
+
+<!-- Named colors example: red, blue, green -->
+
+<!-- HEX colors example: #ff0000 (red), #00ff00 (green) -->
+
+<!-- RGB colors example: rgb(255, 0, 0) (red),
+     rgb(0, 255, 0) (green),
+     rgb(0, 0, 255) (blue) -->
+
+
+<!-- 3. CSS Units -->
+
+<!-- px  = fixed unit (e.g., 16px) -->
+
+<!-- %   = relative to parent element (e.g., width: 50%) -->
+
+<!-- em  = relative to parent font size -->
+
+<!-- rem = relative to the html (root) font size -->
+
+
+<!-- 4. HTML root font size -->
+
+<!-- Default:
+     html { font-size: 16px; } -->
+
+<!-- 1rem = same as html font size -->
+
+
+<!-- 5. Display types -->
+
+<!-- display: inline
+     - elements sit side by side
+     - width and height do NOT work -->
+
+<!-- display: inline-block
+     - elements sit side by side
+     - width and height DO work -->
+
+
+<!-- Easy memory tips:
+     html controls rem
+     parent controls em
+     need width/height? use inline-block -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Basics Playground</title>
+
+    <!-- ✅ External CSS link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ Internal CSS -->
+    <style>
+        /* This styles ALL h2 elements */
+        h2 {
+            color: rgb(0, 128, 0);
+            /* Green using RGB */
+            font-size: 2rem;
+            /* Relative to root font size */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Practice Project</h1>
+
+    <!-- ✅ Inline CSS -->
+    <p style="color: red; font-size: 20px;">
+        This paragraph uses INLINE CSS (red text, 20px font).
+    </p>
+
+    <h2>Colors Example Section</h2>
+
+    <div class="color-boxes">
+        <div class="box box1">Hex Color</div>
+        <div class="box box2">RGB Color</div>
+        <div class="box box3">Named Color</div>
+    </div>
+
+    <h2>Units Example Section</h2>
+
+    <div class="unit-container">
+        <p class="px-text">This uses PX unit</p>
+        <p class="em-text">This uses EM unit</p>
+        <p class="rem-text">This uses REM unit</p>
+        <div class="percent-box">This box uses %</div>
+    </div>
+
+</body>
+
+</html>
