@@ -1,0 +1,62 @@
+<!--
+Topic: CSS Box Model
+--------------------------------
+The CSS Box Model consists of four main parts:
+
+1. Content  - The actual text or image inside the element
+2. Padding  - Space between the content and the border
+3. Border   - Wraps around the padding and content
+4. Margin   - Space outside the border, separating elements
+
+Total element size = content + padding + border + margin
+
+
+┌──────────────────────────────┐
+│           MARGIN             │
+│  ┌────────────────────────┐  │
+│  │         BORDER         │  │
+│  │  ┌──────────────────┐  │  │
+│  │  │      PADDING     │  │  │
+│  │  │  ┌────────────┐  │  │  │
+│  │  │  │  CONTENT   │  │  │  │
+│  │  │  └────────────┘  │  │  │
+│  │  └──────────────────┘  │  │
+│  └────────────────────────┘  │
+└──────────────────────────────┘
+--------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Box Model Example</title>
+    <style>
+        .box {
+            width: 200px;
+            /* Content width */
+            height: 100px;
+            /* Content height */
+
+            padding: 20px;
+            /* Space inside the border */
+            border: 5px solid black;
+            /* Border around padding + content */
+            margin: 30px;
+            /* Space outside the border */
+
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        This is the content area
+    </div>
+
+</body>
+
+</html>
