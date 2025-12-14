@@ -1,0 +1,116 @@
+
+
+/* ───────────────────────────────
+       BASIC SELECTORS
+       ─────────────────────────────── */
+h1 {
+    color: #1a237e;
+    /* dark indigo */
+    background: #e8eaf6;
+    /* light indigo background */
+    padding: 10px;
+}
+
+.card {
+    border: 2px solid #555;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background: #fafafa;
+}
+
+#main-title {
+    font-size: 28px;
+    text-transform: uppercase;
+    background: #c5cae9;
+}
+
+/* ───────────────────────────────
+       RELATIONSHIP / COMBINATORS
+       ─────────────────────────────── */
+
+/* descendant selector */
+.card p {
+    color: #444;
+}
+
+/* child selector */
+.card>h2 {
+    color: #0d47a1;
+    /* deep blue */
+    background: #bbdefb;
+    /* light blue */
+    padding: 4px;
+}
+
+/* adjacent sibling */
+h2+p {
+    font-weight: bold;
+    color: #b71c1c;
+    /* dark red */
+}
+
+/* general sibling */
+h2~div {
+    background: #e0f2f1;
+    /* pale teal */
+    padding: 10px;
+    margin-top: 8px;
+    border-left: 4px solid #00796b;
+    /* teal accent */
+}
+
+/* ───────────────────────────────
+       ATTRIBUTE SELECTORS
+       ─────────────────────────────── */
+
+/* has ANY alt attribute */
+[alt] {
+    border: 3px solid #2e7d32;
+    /* green border */
+    width: 80px;
+    display: inline-block;
+    margin: 4px;
+}
+
+/* exact match */
+input[type="text"] {
+    background: #e3f2fd;
+    /* very light blue */
+    border: 1px solid #90caf9;
+    margin: 4px;
+}
+
+input[type="email"] {
+    background: #f3e5f5;
+    /* light lavender */
+    border: 1px solid #ce93d8;
+    margin: 4px;
+}
+
+input[type="password"] {
+    background: #fff3e0;
+    /* light peach */
+    border: 1px solid #ffb74d;
+    margin: 4px;
+}
+
+/* starts with https */
+a[href^="https"] {
+    color: #1e88e5;
+    /* bright blue */
+    font-weight: bold;
+}
+
+/* ends with .pdf */
+a[href$=".pdf"] {
+    color: #d32f2f;
+    /* bright red */
+}
+
+/* contains google */
+a[href*="google"] {
+    text-decoration: underline;
+    background: #e8f5e9;
+    /* light green background */
+}

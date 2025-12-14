@@ -1,0 +1,79 @@
+<!--
+  CSS SELECTOR DEMO — WHAT THIS FILE COVERS
+  ──────────────────────────────────────────
+
+  ✔ BASIC SELECTORS
+      - element selectors (h1, p, etc.)
+      - class selectors (.card)
+      - ID selectors (#main-title)
+
+  ✔ COMBINATOR SELECTORS
+      - descendant (A B)
+      - child (A > B)
+      - adjacent sibling (A + B)
+      - general sibling (A ~ B)
+
+  ✔ ATTRIBUTE SELECTORS
+      - [attribute]
+      - [type="text"]
+      - [href^="https"]   → starts with
+      - [href$=".pdf"]    → ends with
+      - [href*="google"]  → contains
+
+  ✔ COLOR CODING
+      - Each selector style uses distinct colors so you can see visually which rule is applied
+
+  ✔ NO PSEUDO-CLASSES USED
+      (no :hover, :active, :focus, :first-child, etc.)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selector Demo with Colors</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1 id="main-title">CSS Selector Demo — With Colors</h1>
+
+    <div class="card">
+        <h2>Basic & Relationship Examples</h2>
+        <p>This paragraph follows the h2, so it’s styled via the sibling selector.</p>
+
+        <div>
+            <p>Inside the sibling div (styled by general-sibling rule).</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Form Inputs & Images</h2>
+
+        <p>Text input (type="text") — blue-ish background</p>
+        <input type="text" placeholder="Name">
+        <p>Email input (type="email") — lavender background</p>
+        <input type="email" placeholder="Email">
+        <p>Password input — peach background</p>
+        <input type="password" placeholder="Password">
+
+        <p>Images: ones with alt get green border</p>
+        <img src="avatar.png" alt="profile picture">
+        <img src="logo.png">
+    </div>
+
+    <div class="card">
+        <h2>Links (Attribute Selectors)</h2>
+
+        <a href="https://google.com">Link to Google (starts with https & contains “google”)</a><br>
+        <a href="https://example.com/file.pdf">Download PDF (ends with .pdf)</a><br>
+        <a href="http://mysite.com/about">Regular Link (no special attribute match)</a>
+    </div>
+
+</body>
+
+</html>
