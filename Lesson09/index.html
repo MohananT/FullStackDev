@@ -1,0 +1,61 @@
+<!--
+Topic: CSS Spacing – Margin Collapsing & Auto-Centering
+------------------------------------------------------
+
+1) Margin Collapsing:
+   - Vertical margins (top/bottom) of adjacent block elements collapse.
+   - Only the larger margin value is applied, not the sum.
+
+2) Auto-Centering:
+   - margin: auto horizontally centers a block element.
+   - Requires a fixed width.
+   - Works only for block-level elements.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Spacing Example</title>
+
+    <style>
+        /* Auto-centered container */
+        .container {
+            width: 400px;
+            /* Required for auto-centering */
+            margin: auto;
+            /* Horizontally centers the container */
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        /* Margin collapsing example */
+        h2 {
+            margin-bottom: 50px;
+            /* Vertical margin */
+            background-color: lightgray;
+        }
+
+        p {
+            margin-top: 30px;
+            /* Collapses with h2 margin */
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Heading</h2>
+        <p>
+            The space between this heading and paragraph is 50px,
+            not 80px, because vertical margins collapse and the
+            larger margin is applied.
+        </p>
+    </div>
+
+</body>
+
+</html>
