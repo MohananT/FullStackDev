@@ -1,0 +1,90 @@
+/*
+  FILE: styles.css
+
+  TOPIC COVERED:
+  - display: block, inline, inline-block
+  - position: relative, absolute, fixed, sticky
+
+  DISPLAY EXPLANATION:
+  - block: takes full width, starts on a new line, allows width and height
+  - inline: takes only content width, stays in same line, ignores width/height
+  - inline-block: stays inline but allows width, height, margin, and padding
+
+  POSITION EXPLANATION:
+  - relative: element stays in normal flow and can be moved relative to itself
+  - absolute: removed from normal flow and positioned relative to nearest
+              positioned ancestor
+  - fixed: removed from flow and positioned relative to the viewport
+  - sticky: behaves like relative until a scroll point, then sticks like fixed
+
+  PURPOSE:
+  - Visually demonstrate how display and position properties affect layout
+*/
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 10px;
+    /* z-index: 1; */
+}
+
+.sticky-header {
+    position: sticky;
+    top: 50px;
+    background: orange;
+    padding: 10px;
+}
+
+.block {
+    display: block;
+    background: lightblue;
+    margin: 20px;
+    padding: 10px;
+}
+
+.inline {
+    display: inline;
+    height: 40px;
+    width: 100px;
+    background: yellow;
+    padding: 5px;
+}
+
+.inline-block {
+    display: inline-block;
+    width: 120px;
+    height: 60px;
+    background: coral;
+    margin: 10px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.relative-parent {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    background: lightgray;
+    /* margin: 20px; */
+}
+
+.absolute-child {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    padding: 5px;
+}
+
+.spacer {
+    height: 1000px;
+}

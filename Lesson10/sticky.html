@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sticky Scroll Demo</title>
+
+    <!-- CSS is kept in the same file -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Parent container */
+        .container {
+            margin: 20px;
+        }
+
+        /* Sticky element */
+        .sticky {
+            position: sticky;
+            /* sticks while scrolling */
+            top: 0;
+            /* sticking point */
+            background: orange;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        /* Content blocks to create scroll */
+        p {
+            height: 150px;
+            background: #f2f2f2;
+            margin: 10px 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Scroll Down 👇</h1>
+
+    <div class="container">
+        <div class="sticky">I stick to the top while scrolling</div>
+
+        <p>Content block 1</p>
+        <p>Content block 2</p>
+        <p>Content block 3</p>
+        <p>Content block 4</p>
+        <p>Content block 5</p>
+        <p>Content block 6</p>
+        <p>Content block 7</p>
+        <p>Content block 8</p>
+        <p>Content block 9</p>
+        <p>Content block 10</p>
+    </div>
+
+</body>
+
+</html>

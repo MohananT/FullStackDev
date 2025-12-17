@@ -1,0 +1,56 @@
+<!--
+  FILE: index.html
+
+  TOPIC COVERED:
+  - CSS display properties: block, inline, inline-block
+  - CSS positioning: relative, absolute, fixed, sticky
+
+  WHAT THIS FILE DOES:
+  - Creates elements needed to demonstrate different display behaviors
+  - Includes a fixed navbar, a sticky header, and a relative/absolute layout
+  - Provides enough content to allow scrolling
+
+  KEY IDEAS:
+  - Block elements take full width and start on a new line
+  - Inline elements stay in the same line and ignore width/height
+  - Inline-block elements stay inline but allow width/height
+  - Fixed elements stay attached to the viewport
+  - Sticky elements behave like relative until a scroll threshold
+  - Absolute elements position themselves relative to a positioned parent
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Display & Position Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="navbar">Fixed Navbar</div>
+
+    <h2 class="sticky-header">Sticky Header</h2>
+
+    <div class="block">Block Element</div>
+
+    <span class="inline">Inline 1</span>
+    <span class="inline">Inline 2</span>
+
+    <div class="inline-block">Inline-Block A</div>
+    <div class="inline-block">Inline-Block B</div>
+
+    <div class="relative-parent">
+        Parent (Relative)
+        <div class="absolute-child">
+            Absolute Child
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+</body>
+
+</html>
