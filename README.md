@@ -24,19 +24,19 @@ A structured **day-by-day learning plan** covering **HTML, CSS, JavaScript, Node
 | 6 | HTML | Forms – Inputs | input types, placeholders, labels | ✅ |
 | 7 | HTML | Forms – Advanced Fields | select, checkbox, radio, textarea | ✅ |
 | 8 | HTML | Forms – Submit | buttons, form validation basics | ✅ |
-| 9 | HTML | Tables | table, tr, th, td, colspan, rowspan | ⬜ |
-| 10 | HTML | Media Tags | video, audio, controls attribute | ⬜ |
+| 9 | HTML | Tables | table, tr, th, td, colspan, rowspan | ✅ |
+| 10 | HTML | Media Tags | video, audio, controls attribute | ✅ |
 | 11 | HTML | Iframes & Meta Tags | viewport meta, SEO basics | ⬜ |
 | 12 | HTML | Block vs Inline | examples and differences | ✅ |
 | 13 | HTML | HTML Entities | `&nbsp;`, ©, accessibility intro | ⬜ |
-| 14 | HTML | Layout Tags | div, span, semantic layout recap | ⬜ |
+| 14 | HTML | Layout Tags | div, span, semantic layout recap | ✅ |
 | 15 | HTML | Mini Project | Create a full-page HTML structure | ⬜ |
-| 16 | CSS | CSS Intro | inline, internal, external CSS | ⬜ |
-| 17 | CSS | Colors & Units | px, em, rem, %, rgb(), hex | ⬜ |
-| 18 | CSS | Box Model | margin, padding, border, content | ⬜ |
-| 19 | CSS | Spacing | margin collapsing, auto-centering | ⬜ |
-| 20 | CSS | Display Property | block, inline, inline-block | ⬜ |
-| 21 | CSS | Positioning | relative, absolute, fixed, sticky | ⬜ |
+| 16 | CSS | CSS Intro | inline, internal, external CSS | ✅ |
+| 17 | CSS | Colors & Units | px, em, rem, %, rgb(), hex | ✅ |
+| 18 | CSS | Box Model | margin, padding, border, content | ✅ |
+| 19 | CSS | Spacing | margin collapsing, auto-centering | ✅ |
+| 20 | CSS | Display Property | block, inline, inline-block | ✅ |
+| 21 | CSS | Positioning | relative, absolute, fixed, sticky | ✅ |
 | 22 | CSS | Flexbox Basics | flex-direction, justify-content | ⬜ |
 | 23 | CSS | Flexbox Advanced | align-items, flex-wrap, gap | ⬜ |
 | 24 | CSS | CSS Grid Intro | grid-template, rows, columns | ⬜ |
