@@ -1,0 +1,416 @@
+<!--
+========================================================
+CSS FLEXBOX – COMPLETE LEARNING FILE
+=======================================================
+========================================================
+DEFINITIONS – FLEXBOX CONCEPTS
+========================================================
+
+1. Flexbox container basics
+A flex container is any element with `display: flex` or `display: inline-flex`.
+It enables the Flexbox layout system and controls how its direct children
+(called flex items) are aligned, spaced, and sized using a main axis and
+a cross axis.
+
+--------------------------------------------------------
+
+2. flex-direction
+Defines the direction of the main axis and determines how flex items
+are laid out inside the container.
+
+Values:
+- row            → items flow left to right (default)
+- column         → items flow top to bottom
+- row-reverse    → items flow right to left
+- column-reverse → items flow bottom to top
+
+--------------------------------------------------------
+
+3. justify-content
+Controls how flex items are aligned and spaced along the MAIN axis.
+
+Common values:
+- flex-start     → items at the beginning
+- center         → items centered
+- flex-end       → items at the end
+- space-between  → equal space between items
+- space-around   → space around each item
+- space-evenly   → equal space everywhere
+
+--------------------------------------------------------
+
+4. align-items
+Controls how flex items are aligned along the CROSS axis
+(perpendicular to the main axis).
+
+Common values:
+- stretch        → items stretch to fill container (default)
+- center         → items centered
+- flex-start     → items at the start
+- flex-end       → items at the end
+- baseline       → align text baselines
+
+--------------------------------------------------------
+
+5. flex-wrap
+Defines whether flex items stay on a single line or wrap onto multiple lines
+when there is not enough space.
+
+Values:
+- nowrap         → all items stay on one line (default)
+- wrap           → items move to the next line
+- wrap-reverse   → items wrap in reverse order
+
+--------------------------------------------------------
+
+6. gap
+Defines the space between flex items without using margins.
+It applies spacing both horizontally and vertically and is cleaner
+and more predictable than margins.
+
+--------------------------------------------------------
+
+7. flex-grow, flex-shrink, flex-basis
+These properties control how individual flex items size themselves
+inside a flex container.
+
+- flex-grow   → how much an item grows compared to others
+- flex-shrink → how much an item shrinks when space is limited
+- flex-basis  → the initial size of the item before growing or shrinking
+
+--------------------------------------------------------
+
+8. flex (shorthand)
+A shorthand property that combines flex-grow, flex-shrink, and flex-basis.
+
+Syntax:
+flex: grow shrink basis;
+
+Example:
+flex: 1 1 200px;
+
+This is the most commonly used flex item property in real-world layouts.
+
+--------------------------------------------------------
+
+9. order
+Controls the visual order of flex items without changing the HTML structure.
+Lower values appear first. Default order value is 0.
+
+Note:
+Using order excessively can affect accessibility and screen readers.
+
+--------------------------------------------------------
+
+10. align-self
+Overrides the align-items value for a single flex item.
+It allows individual items to align differently from the rest.
+
+--------------------------------------------------------
+
+11. Real-world layouts (navbar, cards, sidebar)
+Flexbox is commonly used to build practical UI layouts such as:
+- Navbars (horizontal alignment and spacing)
+- Card grids (responsive wrapping)
+- Sidebar layouts (fixed + flexible sections)
+
+========================================================
+END OF DEFINITIONS
+========================================================
+
+KEY AXIS RULE:
+- Main Axis → controlled by flex-direction
+- justify-content → main axis alignment
+- align-items → cross axis alignment
+- align-content → multi-line cross axis
+
+OPEN THIS FILE IN A BROWSER AND RESIZE THE WINDOW
+TO SEE RESPONSIVE BEHAVIOR.
+========================================================
+-->
+
+<!DOCTYPE html> <!-- Defines HTML5 document -->
+<html lang="en"> <!-- Root element with language -->
+
+<head> <!-- Metadata section -->
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    <title>Complete Flexbox Learning</title> <!-- Page title -->
+
+    <style>
+        /* Internal CSS starts */
+
+        /* GLOBAL STYLES */
+        body {
+            /* Styling body */
+            font-family: Arial, sans-serif;
+            /* Font style */
+            margin: 20px;
+            /* Space around page */
+            background: #f4f4f4;
+            /* Light background */
+        }
+
+        h2 {
+            /* Section headings */
+            margin-top: 40px;
+            /* Space above heading */
+        }
+
+        /* COMMON FLEX CONTAINER STYLE */
+        .container {
+            /* Flex container base */
+            display: flex;
+            /* Enables Flexbox */
+            border: 2px solid #333;
+            /* Visible border */
+            padding: 10px;
+            /* Inner spacing */
+            margin-bottom: 20px;
+            /* Space below container */
+            background: white;
+            /* White background */
+        }
+
+        /* FLEX ITEMS */
+        .item {
+            /* Individual flex items */
+            background: #4CAF50;
+            /* Green color */
+            color: white;
+            /* Text color */
+            padding: 20px;
+            /* Inner spacing */
+            text-align: center;
+            /* Center text */
+            border-radius: 4px;
+            /* Rounded corners */
+        }
+
+        /* GAP DEMO */
+        .gap-demo {
+            /* Demonstrates gap */
+            gap: 15px;
+            /* Space between items */
+        }
+
+        /* DIRECTION DEMO */
+        .column {
+            /* Column direction */
+            flex-direction: column;
+            /* Vertical layout */
+        }
+
+        /* JUSTIFY CONTENT DEMO */
+        .justify {
+            /* Main axis alignment */
+            justify-content: space-between;
+            /* Space between items */
+        }
+
+        /* ALIGN ITEMS DEMO */
+        .align {
+            /* Cross axis alignment */
+            height: 150px;
+            /* Fixed height */
+            align-items: center;
+            /* Vertical centering */
+        }
+
+        /* WRAP DEMO */
+        .wrap {
+            /* Wrapping behavior */
+            flex-wrap: wrap;
+            /* Allow wrapping */
+        }
+
+        /* FLEX GROW DEMO */
+        .grow1 {
+            /* Normal grow */
+            flex-grow: 1;
+            /* Takes 1 unit */
+        }
+
+        .grow2 {
+            /* Bigger grow */
+            flex-grow: 2;
+            /* Takes 2 units */
+        }
+
+        /* ORDER DEMO */
+        .order1 {
+            /* First visually */
+            order: 1;
+            /* Order value */
+        }
+
+        .order2 {
+            /* Second visually */
+            order: 2;
+            /* Order value */
+        }
+
+        .order3 {
+            /* Third visually */
+            order: 3;
+            /* Order value */
+        }
+
+        /* ALIGN SELF DEMO */
+        .self {
+            /* Individual alignment */
+            align-self: flex-end;
+            /* Moves item down */
+        }
+
+        /* CARD LAYOUT */
+        .cards {
+            /* Card container */
+            flex-wrap: wrap;
+            /* Responsive wrap */
+            gap: 16px;
+            /* Space between cards */
+        }
+
+        .card {
+            /* Individual card */
+            flex: 1 1 200px;
+            /* Grow, shrink, basis */
+            background: #2196F3;
+            /* Blue color */
+        }
+
+        /* NAVBAR */
+        .navbar {
+            /* Navbar container */
+            justify-content: space-between;
+            /* Logo left, links right */
+            align-items: center;
+            /* Vertical center */
+        }
+
+        /* SIDEBAR LAYOUT */
+        .layout {
+            /* Page layout */
+            height: 200px;
+            /* Height */
+        }
+
+        .sidebar {
+            /* Sidebar */
+            width: 200px;
+            /* Fixed width */
+            background: #9C27B0;
+            /* Purple */
+        }
+
+        .content {
+            /* Main content */
+            flex: 1;
+            /* Takes remaining space */
+            background: #FF9800;
+            /* Orange */
+        }
+    </style> <!-- CSS ends -->
+</head>
+
+<body> <!-- Page content starts -->
+
+    <h1>CSS Flexbox – Complete Learning File</h1> <!-- Main heading -->
+
+    <!-- FLEX DIRECTION -->
+    <h2>1. flex-direction: row (default)</h2>
+    <div class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
+
+    <h2>2. flex-direction: column</h2>
+    <div class="container column">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
+
+    <!-- JUSTIFY CONTENT -->
+    <h2>3. justify-content: space-between</h2>
+    <div class="container justify">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
+
+    <!-- ALIGN ITEMS -->
+    <h2>4. align-items: center</h2>
+    <div class="container align">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
+
+    <!-- GAP -->
+    <h2>5. gap property</h2>
+    <div class="container gap-demo">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
+
+    <!-- FLEX WRAP -->
+    <h2>6. flex-wrap: wrap</h2>
+    <div class="container wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+
+    <!-- FLEX GROW -->
+    <h2>7. flex-grow</h2>
+    <div class="container">
+        <div class="item grow1">Grow 1</div>
+        <div class="item grow2">Grow 2</div>
+    </div>
+
+    <!-- ORDER -->
+    <h2>8. order property</h2>
+    <div class="container">
+        <div class="item order3">Order 3</div>
+        <div class="item order1">Order 1</div>
+        <div class="item order2">Order 2</div>
+    </div>
+
+    <!-- ALIGN SELF -->
+    <h2>9. align-self</h2>
+    <div class="container align">
+        <div class="item">Normal</div>
+        <div class="item self">Self End</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <h2>10. Navbar Layout</h2>
+    <div class="container navbar">
+        <div class="item">Logo</div>
+        <div class="item">Menu</div>
+    </div>
+
+    <!-- CARD GRID -->
+    <h2>11. Responsive Cards</h2>
+    <div class="container cards">
+        <div class="item card">Card 1</div>
+        <div class="item card">Card 2</div>
+        <div class="item card">Card 3</div>
+        <div class="item card">Card 4</div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <h2>12. Sidebar Layout</h2>
+    <div class="container layout">
+        <div class="item sidebar">Sidebar</div>
+        <div class="item content">Main Content</div>
+    </div>
+
+</body> <!-- Page content ends -->
+
+</html> <!-- Document ends -->
