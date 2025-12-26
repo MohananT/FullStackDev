@@ -1,0 +1,292 @@
+<!--
+========================================================
+CSS GRID – COMPLETE LEARNING FILE
+========================================================
+
+========================================================
+DEFINITIONS – GRID CONCEPTS
+========================================================
+
+1. Grid container basics
+A grid container is any element with `display: grid` or `display: inline-grid`.
+It enables the CSS Grid layout system and controls how its direct children
+(called grid items) are placed in rows and columns.
+
+Grid is a TWO-DIMENSIONAL layout system:
+- Horizontal → columns
+- Vertical   → rows
+
+--------------------------------------------------------
+
+2. grid-template-columns
+Defines the number of columns and their sizes.
+
+Examples:
+- 200px 200px          → fixed columns
+- 1fr 1fr 1fr          → equal flexible columns
+- repeat(3, 1fr)       → cleaner syntax
+- minmax(200px, 1fr)   → responsive columns
+
+--------------------------------------------------------
+
+3. grid-template-rows
+Defines the number of rows and their heights.
+
+Examples:
+- 100px 200px
+- auto 1fr auto
+- repeat(2, 150px)
+
+--------------------------------------------------------
+
+4. fr unit (fractional unit)
+The `fr` unit represents a fraction of the remaining available space
+after fixed sizes are applied.
+
+Example:
+grid-template-columns: 200px 1fr 2fr;
+
+--------------------------------------------------------
+
+5. gap
+Controls spacing between grid rows and columns.
+Replaces the need for margins between grid items.
+
+--------------------------------------------------------
+
+6. grid-template (shorthand)
+Defines rows and columns together.
+
+Syntax:
+grid-template: rows / columns;
+
+--------------------------------------------------------
+
+7. grid-column & grid-row
+Used to place grid items manually.
+
+Examples:
+grid-column: 1 / 3;
+grid-row: 2 / 4;
+
+--------------------------------------------------------
+
+8. grid-area
+A shorthand for grid-row-start, grid-column-start,
+grid-row-end, and grid-column-end.
+
+--------------------------------------------------------
+
+9. grid-template-areas
+Allows defining layouts visually using named areas.
+
+Very useful for:
+- Page layouts
+- Dashboards
+- Headers / sidebars / footers
+
+--------------------------------------------------------
+
+10. auto-fit / auto-fill + minmax()
+Used for responsive grids without media queries.
+
+--------------------------------------------------------
+
+OPEN THIS FILE IN A BROWSER AND RESIZE THE WINDOW
+TO SEE RESPONSIVE GRID BEHAVIOR.
+========================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid – Complete Learning</title>
+
+    <style>
+        /* GLOBAL STYLES */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        /* COMMON GRID CONTAINER STYLE */
+        .grid {
+            display: grid;
+            border: 2px solid #333;
+            padding: 10px;
+            margin-bottom: 20px;
+            background: white;
+            gap: 10px;
+        }
+
+        /* GRID ITEMS */
+        .item {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        /* 1. BASIC COLUMNS */
+        .columns-basic {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        /* 2. FIXED + FLEXIBLE */
+        .mixed-columns {
+            grid-template-columns: 200px 1fr 2fr;
+        }
+
+        /* 3. ROWS */
+        .rows-basic {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px 150px;
+        }
+
+        /* 4. SHORTHAND */
+        .shorthand {
+            grid-template: repeat(2, 100px) / repeat(3, 1fr);
+        }
+
+        /* 5. MANUAL PLACEMENT */
+        .placement {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+        }
+
+        .span {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+            background: #2196F3;
+        }
+
+        /* 6. GRID AREAS */
+        .areas {
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "header header"
+                "sidebar content"
+                "footer footer";
+            height: 250px;
+        }
+
+        .header {
+            grid-area: header;
+            background: #673AB7;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: #009688;
+        }
+
+        .content {
+            grid-area: content;
+            background: #FF9800;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #795548;
+        }
+
+        /* 7. RESPONSIVE GRID */
+        .responsive {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        /* 8. CARD STYLE */
+        .card {
+            background: #03A9F4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Grid – Complete Learning File</h1>
+
+    <!-- BASIC COLUMNS -->
+    <h2>1. grid-template-columns (3 equal columns)</h2>
+    <div class="grid columns-basic">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <!-- MIXED COLUMNS -->
+    <h2>2. Fixed + Flexible Columns</h2>
+    <div class="grid mixed-columns">
+        <div class="item">200px</div>
+        <div class="item">1fr</div>
+        <div class="item">2fr</div>
+    </div>
+
+    <!-- ROWS -->
+    <h2>3. grid-template-rows</h2>
+    <div class="grid rows-basic">
+        <div class="item">Row 1</div>
+        <div class="item">Row 1</div>
+        <div class="item">Row 1</div>
+        <div class="item">Row 2</div>
+        <div class="item">Row 2</div>
+        <div class="item">Row 2</div>
+    </div>
+
+    <!-- SHORTHAND -->
+    <h2>4. grid-template shorthand</h2>
+    <div class="grid shorthand">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
+
+    <!-- MANUAL PLACEMENT -->
+    <h2>5. grid-row & grid-column</h2>
+    <div class="grid placement">
+        <div class="item span">Spans Rows & Columns</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+
+    <!-- GRID AREAS -->
+    <h2>6. grid-template-areas (Page Layout)</h2>
+    <div class="grid areas">
+        <div class="item header">Header</div>
+        <div class="item sidebar">Sidebar</div>
+        <div class="item content">Main Content</div>
+        <div class="item footer">Footer</div>
+    </div>
+
+    <!-- RESPONSIVE -->
+    <h2>7. Responsive Grid (auto-fit + minmax)</h2>
+    <div class="grid responsive">
+        <div class="item card">Card 1</div>
+        <div class="item card">Card 2</div>
+        <div class="item card">Card 3</div>
+        <div class="item card">Card 4</div>
+        <div class="item card">Card 5</div>
+    </div>
+
+</body>
+
+</html>

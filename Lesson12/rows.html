@@ -1,0 +1,218 @@
+<!--
+========================================================
+CSS GRID – ROWS ONLY (COMPLETE LEARNING FILE)
+========================================================
+
+========================================================
+DEFINITIONS – GRID ROW CONCEPTS
+========================================================
+
+1. grid-template-rows
+Defines the number of rows and their heights inside a grid container.
+
+Each value represents ONE row.
+
+--------------------------------------------------------
+
+2. Row sizing units
+
+- px     → fixed height
+- %      → percentage of container height
+- auto   → height based on content
+- fr     → fraction of remaining space
+- minmax(min, max) → responsive row sizing
+
+--------------------------------------------------------
+
+3. fr unit (rows)
+The `fr` unit distributes remaining vertical space
+after fixed and auto-sized rows are calculated.
+
+--------------------------------------------------------
+
+4. repeat() for rows
+Used to repeat row definitions cleanly.
+
+Example:
+repeat(3, 100px)
+
+--------------------------------------------------------
+
+5. grid-auto-rows
+Defines the height of IMPLICIT rows
+(rows created automatically when items exceed defined rows).
+
+--------------------------------------------------------
+
+6. gap (row-gap)
+Controls spacing between rows without margins.
+
+--------------------------------------------------------
+
+OPEN THIS FILE IN A BROWSER AND RESIZE HEIGHT
+TO OBSERVE ROW BEHAVIOR.
+========================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid – Rows Only</title>
+
+    <style>
+        /* GLOBAL STYLES */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        /* COMMON GRID CONTAINER */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            /* SINGLE COLUMN (FOCUS ON ROWS) */
+            border: 2px solid #333;
+            background: white;
+            margin-bottom: 20px;
+        }
+
+        /* GRID ITEMS */
+        .item {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid #fff;
+        }
+
+        /* 1. FIXED ROWS */
+        .rows-fixed {
+            grid-template-rows: 60px 60px 60px;
+        }
+
+        /* 2. AUTO ROWS */
+        .rows-auto {
+            grid-template-rows: auto auto auto;
+        }
+
+        /* 3. MIXED ROWS */
+        .rows-mixed {
+            grid-template-rows: 50px auto 1fr;
+            height: 200px;
+        }
+
+        /* 4. FR UNITS */
+        .rows-fr {
+            grid-template-rows: 1fr 2fr 1fr;
+            height: 240px;
+        }
+
+        /* 5. REPEAT */
+        .rows-repeat {
+            grid-template-rows: repeat(4, 50px);
+        }
+
+        /* 6. MINMAX */
+        .rows-minmax {
+            grid-template-rows: minmax(40px, 80px) minmax(60px, 1fr);
+            height: 200px;
+        }
+
+        /* 7. GRID AUTO ROWS */
+        .rows-auto-generated {
+            grid-template-rows: 60px;
+            grid-auto-rows: 40px;
+        }
+
+        /* 8. ROW GAP */
+        .rows-gap {
+            grid-template-rows: repeat(3, 60px);
+            row-gap: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Grid – Row Examples Only</h1>
+
+    <!-- FIXED ROWS -->
+    <h2>1. Fixed Rows (px)</h2>
+    <div class="grid rows-fixed">
+        <div class="item">Row 1 – 60px</div>
+        <div class="item">Row 2 – 60px</div>
+        <div class="item">Row 3 – 60px</div>
+    </div>
+
+    <!-- AUTO ROWS -->
+    <h2>2. Auto Rows (content-based)</h2>
+    <div class="grid rows-auto">
+        <div class="item">Short</div>
+        <div class="item">This row grows based on content height</div>
+        <div class="item">Short</div>
+    </div>
+
+    <!-- MIXED -->
+    <h2>3. Mixed Rows (px + auto + fr)</h2>
+    <div class="grid rows-mixed">
+        <div class="item">50px</div>
+        <div class="item">Auto height based on content</div>
+        <div class="item">1fr (fills remaining space)</div>
+    </div>
+
+    <!-- FR UNITS -->
+    <h2>4. Fractional Rows (fr)</h2>
+    <div class="grid rows-fr">
+        <div class="item">1fr</div>
+        <div class="item">2fr</div>
+        <div class="item">1fr</div>
+    </div>
+
+    <!-- REPEAT -->
+    <h2>5. repeat() for Rows</h2>
+    <div class="grid rows-repeat">
+        <div class="item">Row 1</div>
+        <div class="item">Row 2</div>
+        <div class="item">Row 3</div>
+        <div class="item">Row 4</div>
+    </div>
+
+    <!-- MINMAX -->
+    <h2>6. minmax() Rows</h2>
+    <div class="grid rows-minmax">
+        <div class="item">min 40px / max 80px</div>
+        <div class="item">min 60px / max 1fr</div>
+    </div>
+
+    <!-- AUTO GENERATED ROWS -->
+    <h2>7. grid-auto-rows (implicit rows)</h2>
+    <div class="grid rows-auto-generated">
+        <div class="item">Explicit Row</div>
+        <div class="item">Auto Row</div>
+        <div class="item">Auto Row</div>
+        <div class="item">Auto Row</div>
+    </div>
+
+    <!-- GAP -->
+    <h2>8. row-gap</h2>
+    <div class="grid rows-gap">
+        <div class="item">Row 1</div>
+        <div class="item">Row 2</div>
+        <div class="item">Row 3</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!--
+========================================================
+CSS GRID – COLUMNS ONLY (COMPLETE LEARNING FILE)
+========================================================
+
+========================================================
+DEFINITIONS – GRID COLUMN CONCEPTS
+========================================================
+
+1. grid-template-columns
+Defines the number of columns and their widths inside a grid container.
+
+Each value represents ONE column.
+
+--------------------------------------------------------
+
+2. Column sizing units
+
+- px     → fixed width
+- %      → percentage of container width
+- auto   → width based on content
+- fr     → fraction of remaining space
+- minmax(min, max) → responsive column sizing
+
+--------------------------------------------------------
+
+3. fr unit (columns)
+The `fr` unit distributes remaining horizontal space
+after fixed and auto-sized columns are calculated.
+
+--------------------------------------------------------
+
+4. repeat() for columns
+Used to repeat column definitions cleanly.
+
+Example:
+repeat(4, 1fr)
+
+--------------------------------------------------------
+
+5. grid-auto-columns
+Defines the width of IMPLICIT columns
+(columns created automatically when items exceed defined columns).
+
+--------------------------------------------------------
+
+6. gap (column-gap)
+Controls spacing between columns without margins.
+
+--------------------------------------------------------
+
+OPEN THIS FILE IN A BROWSER AND RESIZE WIDTH
+TO OBSERVE COLUMN BEHAVIOR.
+========================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid – Columns Only</title>
+
+    <style>
+        /* GLOBAL STYLES */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        /* COMMON GRID CONTAINER */
+        .grid {
+            display: grid;
+            grid-template-rows: 1fr;
+            /* SINGLE ROW (FOCUS ON COLUMNS) */
+            border: 2px solid #333;
+            background: white;
+            margin-bottom: 20px;
+        }
+
+        /* GRID ITEMS */
+        .item {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            text-align: center;
+            border-right: 1px solid #fff;
+        }
+
+        /* 1. FIXED COLUMNS */
+        .columns-fixed {
+            grid-template-columns: 80px 80px 80px;
+        }
+
+        /* 2. AUTO COLUMNS */
+        .columns-auto {
+            grid-template-columns: auto auto auto;
+        }
+
+        /* 3. MIXED COLUMNS */
+        .columns-mixed {
+            grid-template-columns: 100px auto 1fr;
+        }
+
+        /* 4. FR UNITS */
+        .columns-fr {
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        /* 5. REPEAT */
+        .columns-repeat {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* 6. MINMAX */
+        .columns-minmax {
+            grid-template-columns: minmax(80px, 150px) minmax(100px, 1fr);
+        }
+
+        /* 7. GRID AUTO COLUMNS */
+        .columns-auto-generated {
+            grid-template-columns: 100px;
+            grid-auto-columns: 60px;
+            grid-auto-flow: column;
+        }
+
+        /* 8. COLUMN GAP */
+        .columns-gap {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Grid – Column Examples Only</h1>
+
+    <!-- FIXED COLUMNS -->
+    <h2>1. Fixed Columns (px)</h2>
+    <div class="grid columns-fixed">
+        <div class="item">80px</div>
+        <div class="item">80px</div>
+        <div class="item">80px</div>
+    </div>
+
+    <!-- AUTO COLUMNS -->
+    <h2>2. Auto Columns (content-based)</h2>
+    <div class="grid columns-auto">
+        <div class="item">Short</div>
+        <div class="item">Very very long content</div>
+        <div class="item">Mid</div>
+    </div>
+
+    <!-- MIXED -->
+    <h2>3. Mixed Columns (px + auto + fr)</h2>
+    <div class="grid columns-mixed">
+        <div class="item">100px</div>
+        <div class="item">auto</div>
+        <div class="item">1fr</div>
+    </div>
+
+    <!-- FR UNITS -->
+    <h2>4. Fractional Columns (fr)</h2>
+    <div class="grid columns-fr">
+        <div class="item">1fr</div>
+        <div class="item">2fr</div>
+        <div class="item">1fr</div>
+    </div>
+
+    <!-- REPEAT -->
+    <h2>5. repeat() for Columns</h2>
+    <div class="grid columns-repeat">
+        <div class="item">Col 1</div>
+        <div class="item">Col 2</div>
+        <div class="item">Col 3</div>
+        <div class="item">Col 4</div>
+    </div>
+
+    <!-- MINMAX -->
+    <h2>6. minmax() Columns</h2>
+    <div class="grid columns-minmax">
+        <div class="item">min 80px / max 150px</div>
+        <div class="item">min 100px / max 1fr</div>
+    </div>
+
+    <!-- AUTO GENERATED COLUMNS -->
+    <h2>7. grid-auto-columns (implicit columns)</h2>
+    <div class="grid columns-auto-generated">
+        <div class="item">Explicit</div>
+        <div class="item">Auto</div>
+        <div class="item">Auto</div>
+        <div class="item">Auto</div>
+    </div>
+
+    <!-- GAP -->
+    <h2>8. column-gap</h2>
+    <div class="grid columns-gap">
+        <div class="item">Col 1</div>
+        <div class="item">Col 2</div>
+        <div class="item">Col 3</div>
+    </div>
+
+</body>
+
+</html>
