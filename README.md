@@ -37,16 +37,16 @@ A structured **day-by-day learning plan** covering **HTML, CSS, JavaScript, Node
 | 19 | CSS | Spacing | margin collapsing, auto-centering | ✅ |
 | 20 | CSS | Display Property | block, inline, inline-block | ✅ |
 | 21 | CSS | Positioning | relative, absolute, fixed, sticky | ✅ |
-| 22 | CSS | Flexbox Basics | flex-direction, justify-content | ⬜ |
-| 23 | CSS | Flexbox Advanced | align-items, flex-wrap, gap | ⬜ |
-| 24 | CSS | CSS Grid Intro | grid-template, rows, columns | ⬜ |
-| 25 | CSS | CSS Grid Advanced | fr unit, areas, auto-fit | ⬜ |
+| 22 | CSS | Flexbox Basics | flex-direction, justify-content | ✅ |
+| 23 | CSS | Flexbox Advanced | align-items, flex-wrap, gap | ✅ |
+| 24 | CSS | CSS Grid Intro | grid-template, rows, columns | ✅ |
+| 25 | CSS | CSS Grid Advanced | fr unit, areas, auto-fit | ✅ |
 | 26 | CSS | Pseudo Elements | ::before, ::after, pseudo classes | ⬜ |
 | 27 | CSS | Responsive Design | media queries, breakpoints | ⬜ |
 | 28 | CSS | Animations | transition, keyframes | ⬜ |
 | 29 | CSS | Variables | CSS custom properties | ⬜ |
 | 30 | CSS | Mini Project | Responsive landing page | ⬜ |
-| 31 | JavaScript | Basics – Variables | var, let, const, data types | ⬜ |
+| 31 | JavaScript | Basics – Variables | var, let, const, data types | ✅ |
 | 32 | JavaScript | Operators | arithmetic, logical, comparison | ⬜ |
 | 33 | JavaScript | Conditionals | if, else-if, switch | ⬜ |
 | 34 | JavaScript | Loops | for, while, for-of, forEach | ⬜ |
