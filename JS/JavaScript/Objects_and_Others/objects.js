@@ -28,12 +28,13 @@
 const user = {
   name: "Alex",
   age: 30,
-  isAdmin: true,
+  isAdmin: true
 };
 
 // Accessing properties
 console.log(user.name); // "Alex"
-console.log(user.age); // 30
+console.log(user.age);  // 30
+
 
 /* ============================================================
    2. Dot Notation vs Bracket Notation
@@ -48,10 +49,11 @@ console.log(user[dynamicKey]); // 30
 
 // Bracket notation is required for keys with special characters
 const weirdObject = {
-  "first-name": "Alex",
+  "first-name": "Alex"
 };
 
 console.log(weirdObject["first-name"]); // "Alex"
+
 
 /* ============================================================
    3. `this` Keyword Inside an Object
@@ -64,7 +66,7 @@ const person = {
   greet() {
     // `this` refers to the object calling the method
     return `Hi, I'm ${this.name}`;
-  },
+  }
 };
 
 console.log(person.greet()); // "Hi, I'm Sam"
@@ -72,6 +74,7 @@ console.log(person.greet()); // "Hi, I'm Sam"
 // Common pitfall: losing `this`
 const greetFn = person.greet;
 console.log(greetFn()); // undefined (or error in strict mode)
+
 
 /* ============================================================
    4. Object as a Constructor Function
@@ -89,7 +92,8 @@ const user1 = new User("Alex", 25);
 const user2 = new User("Jamie", 30);
 
 console.log(user1.name); // "Alex"
-console.log(user2.age); // 30
+console.log(user2.age);  // 30
+
 
 /* ============================================================
    5. Object.create()
@@ -99,7 +103,7 @@ console.log(user2.age); // 30
 const animal = {
   speak() {
     return "Animal sound";
-  },
+  }
 };
 
 // Create a new object with `animal` as its prototype
@@ -108,8 +112,9 @@ const dog = Object.create(animal);
 // Adding an own property to dog
 dog.breed = "Labrador";
 
-console.log(dog.breed); // "Labrador"
+console.log(dog.breed);  // "Labrador"
 console.log(dog.speak()); // "Animal sound"
+
 
 /* ============================================================
    6. Object Inheritance using Object.create()
@@ -118,17 +123,18 @@ console.log(dog.speak()); // "Animal sound"
 const vehicle = {
   move() {
     return "Vehicle is moving";
-  },
+  }
 };
 
 const car = Object.create(vehicle);
 car.wheels = 4;
 
-console.log(car.move()); // inherited method
-console.log(car.wheels); // own property
+console.log(car.move());   // inherited method
+console.log(car.wheels);  // own property
 
 // Prototype chain:
 // car -> vehicle -> Object.prototype -> null
+
 
 /* ============================================================
    7. Object.keys()
@@ -137,11 +143,12 @@ console.log(car.wheels); // own property
 // Returns only OWN enumerable properties
 const profile = {
   username: "alex123",
-  email: "alex@example.com",
+  email: "alex@example.com"
 };
 
 console.log(Object.keys(profile));
 // ["username", "email"]
+
 
 /* ============================================================
    8. for...in Loop
@@ -160,19 +167,21 @@ for (let key in car) {
   }
 }
 
+
 /* ============================================================
    9. Deleting a Property
    ============================================================ */
 
 const settings = {
   theme: "dark",
-  debug: true,
+  debug: true
 };
 
 delete settings.debug;
 
 console.log(settings.debug); // undefined
 console.log(settings); // { theme: "dark" }
+
 
 /* ============================================================
    10. hasOwnProperty()

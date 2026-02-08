@@ -27,7 +27,7 @@
    ============================================================ */
 
 const str1 = "Hello";
-const str2 = "World";
+const str2 = 'World';
 const str3 = `JavaScript`;
 
 console.log(str1, str2, str3);
